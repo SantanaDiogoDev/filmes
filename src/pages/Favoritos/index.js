@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import './favoritos.css';
 
 function Favoritos(){
@@ -18,6 +19,16 @@ function Favoritos(){
         });
         setFilmes(filtroFilmes);
         localStorage.setItem("@primeflix", JSON.stringify(filtroFilmes));
+        toast.info('🦄 Removido com sucesso!', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
     }
 
     return(
